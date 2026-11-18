@@ -24,7 +24,7 @@ Set up the ESP32-CAM and Arduino IDE environment, configure the `CameraWebServer
 2. Connected the ESP32-CAM to the computer via USB and selected **Tools → Board → esp32 → AI Thinker ESP32-CAM**.
 3. Selected the active serial port **`/dev/ttyUSB0`** under **Tools → Port**.
 4. Opened the built-in camera server example via **File → Examples → ESP32 → Camera → CameraWebServer**.
-5. Opened the **`board_config.h`** tab and verified that `#define CAMERA_MODEL_AI_THINKER` was uncommented while all other camera models remained commented out (`//`).
+5. Opened the **`board_config.h`** tab and verified that `#define CAMERA_MODEL_AI_THINKER` was uncommented while all other camera models remained commented out .
 6. Set the Soft-AP hotspot network name (`ssid`) and password (minimum 8 characters) on lines 13–14 of **`CameraWebServer.ino`**.
 7. Replaced the Station-mode `WiFi.begin(ssid, password)` connection loop in `void setup()` with `WiFi.softAP(ssid, password);` (line 111) so the ESP32-CAM broadcasts its own standalone Wi-Fi network.
 8. Updated the Serial Monitor IP printout in `void setup()` (line 116) from `Serial.print(WiFi.localIP());` to `Serial.print(WiFi.softAPIP());` so it displays the Soft-AP IP address (`192.168.4.1`).
